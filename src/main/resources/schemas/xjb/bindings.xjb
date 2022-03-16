@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<jaxb:bindings version="2.1" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+  jaxb:extensionBindingPrefixes="xjc" xmlns:annox="http://annox.dev.java.net" xmlns:inheritance="http://jaxb2-commons.dev.java.net/basic/inheritance" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <jaxb:globalBindings typesafeEnumMemberName="generateName">
+      <xjc:javaType name="java.time.LocalDate" xmlType="xs:date" adapter="com.example.order.util.LocalDateAdapter" />
+       <xjc:javaType name="java.time.LocalDateTime" xmlType="xs:dateTime" adapter="com.example.order.util.LocalDateTimeAdapter" />
+  </jaxb:globalBindings>
+
+</jaxb:bindings>

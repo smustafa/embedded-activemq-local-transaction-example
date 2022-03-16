@@ -1,0 +1,50 @@
+spring:
+  application:
+    name: customer-orders
+  lifecycle:
+    timeout-per-shutdown-phase: 10s
+
+customer-orders-queue-config:
+  CustomerOrdersInboundQueue: EMBEDDED.AMQ.EXAMPLE.INBOUND.ROOT
+  CustomerOrdersOutboundServiceAQueue: EMBEDDED.AMQ.EXAMPLE.OUTBOUND.A.ROOT
+  CustomerOrdersOutboundServiceBQueue: EMBEDDED.AMQ.EXAMPLE.OUTBOUND.B.ROOT
+  CustomerOrdersErrorQueue: EMBEDDED.AMQ.EXAMPLE.ERROR.ROOT
+
+#Defaults to Embedded AMQ
+# If we want to configure it to access a remote instance, then uncomment the below lines:
+#  activemq:
+#    in-memory: false
+#    user: admin
+#    password: admin
+#    broker-url: tcp://localhost:61616
+
+logging:
+  level:
+    root: INFO
+    '[com.example.order]': DEBUG
+
+management:
+  endpoints:
+    enabled-by-default: false
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      enabled: true
+    info:
+      enabled: true
+    prometheus:
+      enabled: true
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+
+server:
+  shutdown: graceful
+  port: 8080
+  compression:
+    enabled: true
+
+
