@@ -1,6 +1,5 @@
-Simple AMQ Message Service to handle Customer Orders.  
+Simple JMS Service to handle Customer Orders and send processed orders towards 2 Outbound Queues.
 
-Requirements:  
-- Implement Local Transaction
-- Write Integration Test to verify Rollback and Successful Processing of Message
-- 
+It will configure a Local JmsTransactionManager and verify Transactional management through an Integration Test.
+
+Embedded ActiveMQ will be used.
