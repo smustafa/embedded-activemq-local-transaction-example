@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.jms.activemq.ActiveMQConnectionFac
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
-import org.springframework.jms.connection.CachingConnectionFactory;
 import org.springframework.jms.connection.JmsTransactionManager;
 import org.springframework.jms.support.converter.MarshallingMessageConverter;
 import org.springframework.jms.support.converter.MessageType;
@@ -40,7 +39,7 @@ public class JMSConfiguration {
     }
 
     @Bean
-    public DefaultJmsListenerContainerFactory jmsListenerContainerFactory(@Autowired CachingConnectionFactory connectionFactory, @Autowired PlatformTransactionManager jmsTransactionManager) {
+    public DefaultJmsListenerContainerFactory jmsListenerContainerFactory(@Autowired ConnectionFactory connectionFactory, @Autowired PlatformTransactionManager jmsTransactionManager) {
 
         var factory = new DefaultJmsListenerContainerFactory();
         factory.setTransactionManager(jmsTransactionManager);
