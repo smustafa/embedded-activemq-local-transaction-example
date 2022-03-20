@@ -20,7 +20,7 @@ import java.io.InputStream;
 @SpringBootTest
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @DirtiesContext
-class CustomerOrdersMessageConsumerIT {
+class CustomerOrdersInboundListenerIT {
 
     @Autowired
     private JMSQueuesConfig jmsQueuesConfig;

@@ -28,7 +28,7 @@ import java.util.concurrent.TimeUnit;
 @ExtendWith({ OutputCaptureExtension.class })
 @SpringBootTest
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-class CustomerOrdersMessageConsumerRollbackIT {
+class CustomerOrdersInboundListenerRollbackIT {
 
     @Autowired
     private JMSQueuesConfig jmsQueuesConfig;
